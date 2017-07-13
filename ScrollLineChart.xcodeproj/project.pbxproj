@@ -14,6 +14,7 @@
 		7C919D1C1F1623AB00FEAFB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C919D1B1F1623AB00FEAFB3 /* Assets.xcassets */; };
 		7C919D1F1F1623AB00FEAFB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C919D1D1F1623AB00FEAFB3 /* LaunchScreen.storyboard */; };
 		7C919D281F1628FF00FEAFB3 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C919D271F1628FF00FEAFB3 /* CollectionViewCell.m */; };
+		7C919D2B1F171D3000FEAFB3 /* YAxisView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C919D2A1F171D3000FEAFB3 /* YAxisView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		7C919D201F1623AB00FEAFB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C919D261F1628FF00FEAFB3 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		7C919D271F1628FF00FEAFB3 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		7C919D291F171D3000FEAFB3 /* YAxisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAxisView.h; sourceTree = "<group>"; };
+		7C919D2A1F171D3000FEAFB3 /* YAxisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAxisView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				7C919D161F1623AB00FEAFB3 /* ViewController.m */,
 				7C919D261F1628FF00FEAFB3 /* CollectionViewCell.h */,
 				7C919D271F1628FF00FEAFB3 /* CollectionViewCell.m */,
+				7C919D291F171D3000FEAFB3 /* YAxisView.h */,
+				7C919D2A1F171D3000FEAFB3 /* YAxisView.m */,
 				7C919D181F1623AB00FEAFB3 /* Main.storyboard */,
 				7C919D1B1F1623AB00FEAFB3 /* Assets.xcassets */,
 				7C919D1D1F1623AB00FEAFB3 /* LaunchScreen.storyboard */,
@@ -155,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C919D2B1F171D3000FEAFB3 /* YAxisView.m in Sources */,
 				7C919D171F1623AB00FEAFB3 /* ViewController.m in Sources */,
 				7C919D141F1623AB00FEAFB3 /* AppDelegate.m in Sources */,
 				7C919D281F1628FF00FEAFB3 /* CollectionViewCell.m in Sources */,
@@ -317,6 +323,7 @@
 				7C919D251F1623AB00FEAFB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
