@@ -12,6 +12,7 @@
 #define numberOfYAxisElements 5 // y轴分为几段
 #define marginTop 30
 
+
 @interface CollectionViewCell()
 @property (strong, nonatomic) NSArray *xTitleArray;
 @property (strong, nonatomic) NSArray *yValueArray;
@@ -22,18 +23,25 @@
 
 @property (assign, nonatomic) CGRect firstFrame;//记录坐标轴的第一个frame
 @property (assign, nonatomic) CGRect firstStrFrame;//第一个点的文字的frame
+@property (assign, nonatomic) BOOL isFirst;
+@property (nonatomic, assign) CGFloat marginLeft;
 @end
 
 @implementation CollectionViewCell
 
-- (void)setXTitleArray:(NSArray *)xTitleArray yValueArray:(NSArray *)yValueArray yMax:(CGFloat)yMax yMin:(CGFloat)yMin{
+- (void)setXTitleArray:(NSArray *)xTitleArray yValueArray:(NSArray *)yValueArray yMax:(CGFloat)yMax yMin:(CGFloat)yMin isFirst:(BOOL)isFirst{
     
     self.xTitleArray = xTitleArray;
     self.yValueArray = yValueArray;
     self.yMax = yMax;
     self.yMin = yMin;
-    self.defaultSpace = 50;
+    self.defaultSpace = 30;
     self.pointGap = self.defaultSpace;
+    if (isFirst) {
+        self.marginLeft = 30;
+    } else {
+        self.marginLeft = 0;
+    }
     [self setNeedsDisplay];
 }
 
@@ -50,14 +58,14 @@
         CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
         NSDictionary *attr = @{NSFontAttributeName: [UIFont systemFontOfSize:8]};
         CGSize labelSize = [title sizeWithAttributes:attr];
-        CGRect titleRect = CGRectMake((i+1) * self.pointGap - labelSize.width/2, rect.size.height - labelSize.height, labelSize.width, labelSize.height);
+        CGRect titleRect = CGRectMake(i* self.pointGap - labelSize.width/2 + self.marginLeft, rect.size.height - labelSize.height, labelSize.width, labelSize.height);
         
         if ( i==0 ) {
             self.firstFrame = titleRect;
         }
-        if (titleRect.origin.x < 0) {
-            titleRect.origin.x = 0;
-        }
+//        if (titleRect.origin.x < 0) {
+//            titleRect.origin.x = 0;
+//        }
         [title drawInRect:titleRect withAttributes:@{NSFontAttributeName :[UIFont systemFontOfSize:8],NSForegroundColorAttributeName: [UIColor whiteColor]}];
         
     }
@@ -82,15 +90,29 @@
                 NSNumber *startValue = self.yValueArray[i];
                 NSNumber *endValue = self.yValueArray[i+1];
                 
-                CGPoint startPoint = CGPointMake(self.pointGap * (1+i), chartHeight * (startValue.doubleValue - self.yMin) / (self.yMax - self.yMin) + marginTop);
-                CGPoint endPoint = CGPointMake(self.pointGap * (i+2), chartHeight * (endValue.doubleValue - self.yMin) / (self.yMax - self.yMin) + marginTop);
+                CGPoint startPoint = CGPointMake(self.pointGap * (i) + self.marginLeft, chartHeight * (startValue.doubleValue - self.yMin) / (self.yMax - self.yMin) + marginTop);
+                CGPoint endPoint = CGPointMake(self.pointGap * (i+1) + self.marginLeft, chartHeight * (endValue.doubleValue - self.yMin) / (self.yMax - self.yMin) + marginTop);
                 
                 CGFloat normal[1]={1};
                 CGContextSetLineDash(context,0,normal,0); //画实线
                 
                 [self drawLine:context startPoint:startPoint endPoint:endPoint lineColor:[UIColor colorWithRed:26/255.0 green:135/255.0 blue:254/255.0 alpha:1] lineWidth:2];
-                //[self drawLine:context startPoint:startPoint endPoint:endPoint lineColor:[UIColor greenColor] lineWidth:1];
                 
+                //画点
+                UIColor*aColor = [UIColor redColor]; //点的颜色
+                CGContextSetFillColorWithColor(context, aColor.CGColor);//填充颜色
+                CGContextAddArc(context, startPoint.x, startPoint.y, 3, 0, 2*M_PI, 0); //添加一个圆
+                CGContextDrawPath(context, kCGPathFill);//绘制填充
+                
+            } else {
+                NSNumber *endValue = self.yValueArray[i];
+                
+                CGPoint endPoint = CGPointMake(self.pointGap * i + self.marginLeft, chartHeight * (endValue.doubleValue - self.yMin) / (self.yMax - self.yMin) + marginTop);
+                //画点
+                UIColor*aColor = [UIColor redColor]; //点的颜色
+                CGContextSetFillColorWithColor(context, aColor.CGColor);//填充颜色
+                CGContextAddArc(context, endPoint.x, endPoint.y, 3, 0, 2*M_PI, 0); //添加一个圆
+                CGContextDrawPath(context, kCGPathFill);//绘制填充
             }
         }
     }

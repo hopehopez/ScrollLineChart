@@ -18,6 +18,6 @@
 @property (assign, nonatomic) CGPoint screenLoc; //相对于屏幕位置
 
 
-- (void)setXTitleArray:(NSArray*)xTitleArray yValueArray:(NSArray*)yValueArray yMax:(CGFloat)yMax yMin:(CGFloat)yMin;
+- (void)setXTitleArray:(NSArray*)xTitleArray yValueArray:(NSArray*)yValueArray yMax:(CGFloat)yMax yMin:(CGFloat)yMin isFirst:(BOOL)isFirst ;
 
 @end
