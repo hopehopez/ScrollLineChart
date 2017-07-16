@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "CollectionViewCell.h"
 #import "YAxisView.h"
+#import "XZMRefresh.h"
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *dataSource;
@@ -34,7 +35,9 @@
     self.collectionView.showsVerticalScrollIndicator = NO;
     self.collectionView.showsHorizontalScrollIndicator = NO;
     self.collectionView.backgroundColor = [UIColor clearColor];
-    self.collectionView.bounces = NO;
+    self.collectionView.bounces = YES;
+    
+    [self addRefresher];
     
     [self.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
     
@@ -46,7 +49,7 @@
         [self.dataSource addObject:array];
     }
     [self.collectionView reloadData];
-    
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.dataSource.count-1 inSection:0] atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -107,4 +110,43 @@
     return yArray;
 }
 
+- (void)getMoreData:(XZMRefreshHeader *)header{
+    //向前获取更多的数据
+    NSLog(@" 获取更多数据");
+    // 模拟延迟加载数据，因此2秒后才调用）
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSLog(@"获取完毕");
+        [self.collectionView reloadData];
+        NSArray *array = [self getYValues];
+        [self.dataSource addObject:array];
+        [self.collectionView reloadData];
+        // 结束刷新
+        [header endRefreshing];
+    });
+
+}
+
+- (void)addRefresher{
+    [self.collectionView xzm_addNormalHeaderWithTarget:self action:@selector(getMoreData:)];
+    [self.collectionView xzm_addNormalFooterWithTarget:self action:@selector(getMoreData:)];
+    
+    // 设置header文字
+    [self.collectionView.xzm_header setTitle:@"滑动可以刷新" forState:XZMRefreshStateNormal];
+    [self.collectionView.xzm_header setTitle:@"释放立即刷新" forState:XZMRefreshStatePulling];
+    [self.collectionView.xzm_header setTitle:@"正在刷新中 ..." forState:XZMRefreshStateRefreshing];
+    // 设置字体
+    self.collectionView.xzm_header.font = [UIFont systemFontOfSize:15];
+    // 设置颜色
+    self.collectionView.xzm_header.textColor = [UIColor redColor];
+    
+    // 设置footer文字
+    [self.collectionView.xzm_footer setTitle:@"滑动可以刷新" forState:XZMRefreshStateNormal];
+    [self.collectionView.xzm_footer setTitle:@"释放立即刷新" forState:XZMRefreshStatePulling];
+    [self.collectionView.xzm_footer setTitle:@"正在加载中数据 ..." forState:XZMRefreshStateRefreshing];
+    // 设置字体
+    self.collectionView.xzm_footer.font = [UIFont systemFontOfSize:17];
+    // 设置颜色
+    self.collectionView.xzm_footer.textColor = [UIColor blueColor];
+
+}
 @end

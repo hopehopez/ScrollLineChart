@@ -1,0 +1,564 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0715AB25327F0B5DBD3EADD300E6A095 /* UIView+XZMFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AA763B36F4EC5F437862B0E6DAB0EF /* UIView+XZMFrame.m */; };
+		16547FAFE813DE1167ECAE0F8A92768C /* XZMRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F09566B9BE766C597A845797807741 /* XZMRefreshHeader.m */; };
+		22EBF95E51FBEC469CFA20EED7153147 /* XZMRefreshConst.h in Headers */ = {isa = PBXBuildFile; fileRef = 26C7485E0563AF7FE9E68337AB60B0E3 /* XZMRefreshConst.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A67E87CD48E727BB7BE2972B12A3653 /* XZMBaseRefreshView.h in Headers */ = {isa = PBXBuildFile; fileRef = 227B9D2AC15B837886416CF7B6BDC714 /* XZMBaseRefreshView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		48248EA991BA9C10D0EB554693706693 /* XZMRefreshGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = C306431E8ACECA31E54BEF67EC9AB3CF /* XZMRefreshGifFooter.m */; };
+		49A7800A54D4ACEB02E97B40F3D2CBEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		552100DA8724249EF655A357947F24FD /* XZMRefreshGifFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 106DC4A6F7C49A31C3D08A5DF442AF0A /* XZMRefreshGifFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		557DB989431616F979A1A32C1F196EC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		55F4E3B007D0264DFB55F58598842EC0 /* XZMRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = B97C5509344783632D5F8772AB771600 /* XZMRefreshConst.m */; };
+		5E664290A79B7688B1C51F316BE0F9C9 /* XZMRefreshNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0448BA1F311E89445888F07AEC7D39 /* XZMRefreshNormalFooter.m */; };
+		63616233D753ABF64F6ABB6D6B56C186 /* XZMRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1116A8F550C8D604C2AE83BB0BB75016 /* XZMRefreshGifHeader.m */; };
+		7FF29E3205057012E0683A172B3985A8 /* Pods-ScrollLineChart-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFCEC8DEFADD0FC0A9FFA51CF309CA3 /* Pods-ScrollLineChart-dummy.m */; };
+		8223B6FD540441DA7D72CF9A2700CDEF /* UIScrollView+XZMRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 76FBD10B7E17D877F9AF869A7A53F967 /* UIScrollView+XZMRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B93CC5D38666FBC6EBEDDB19CE388B6 /* UIScrollView+XZMExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D134B39B8CB09B3A6E5F6CB94BBDE0C /* UIScrollView+XZMExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A11EC6041CBC322992D2B40886055175 /* UIView+XZMFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = D3167DABC028823DCF8E1005BE2F85A3 /* UIView+XZMFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD82D057AA863751426137A77EF7D8DC /* UIScrollView+XZMRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = A19344F3CE660D097897384C58F06444 /* UIScrollView+XZMRefresh.m */; };
+		B2474C46D4B4BD0B371133EAB4503EF4 /* XZMRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B419346351ED8760FCB6B470D9DB8F5 /* XZMRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8572CCC208D400DFD06DA0C38FBB42A /* XZMRefreshNormalHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 8495A75C6EE3EC0019F5F5A04527C4CA /* XZMRefreshNormalHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B96967DDC49AF82B071A145F76CBF002 /* XZMRefreshHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = E562AD4C73C9CA831B6199CBEBA5C76C /* XZMRefreshHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B97F39C6228F09D1225B45C134861AF9 /* XZMRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 245DF34C676E81409F35FB543C436B35 /* XZMRefreshNormalHeader.m */; };
+		C34C485A13D207191850DA3999FBEC33 /* XZMRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 069AC2FF8349027E3A7D543BB3D550EF /* XZMRefreshFooter.m */; };
+		C47A4B5D761E5E9519EA2EC767B2366B /* XZMRefreshNormalFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = C73156D01B62EC003BC8A1E216A4C4A3 /* XZMRefreshNormalFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9F39671D72B701210DFF8D8F2F13E98 /* XZMRefresh-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FD0420A9A612BC737A1DD521526369 /* XZMRefresh-dummy.m */; };
+		D73EA2421BC17E32DC5C63DCC4682295 /* XZMBaseRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1688443B007C9B9EBEAD9C4AB470E0 /* XZMBaseRefreshView.m */; };
+		E2CCFFCC493929C6D494528D7F68F953 /* UIScrollView+XZMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BF5908449F8862FD6BEC0A01BB47A9 /* UIScrollView+XZMExtension.m */; };
+		FB77E924CFAB2EFCB678D689E7B9A186 /* XZMRefreshFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = BBCA82DC11A0CD7E6FD947329231E97D /* XZMRefreshFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FF92F0C3076525689D62287BFE2B1333 /* XZMRefreshGifHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = B9BA923D859CEC7671DC09CD0D659622 /* XZMRefreshGifHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F8078F04E57A106B5C12824ECD6BD72A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0802384DD8AA7423D8D0AA781EC2477;
+			remoteInfo = XZMRefresh;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		069AC2FF8349027E3A7D543BB3D550EF /* XZMRefreshFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XZMRefreshFooter.m; path = XZMRefresh/Custom/Footer/XZMRefreshFooter.m; sourceTree = "<group>"; };
+		106DC4A6F7C49A31C3D08A5DF442AF0A /* XZMRefreshGifFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XZMRefreshGifFooter.h; path = XZMRefresh/Custom/Footer/XZMRefreshGifFooter.h; sourceTree = "<group>"; };
+		1116A8F550C8D604C2AE83BB0BB75016 /* XZMRefreshGifHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XZMRefreshGifHeader.m; path = XZMRefresh/Custom/Header/XZMRefreshGifHeader.m; sourceTree = "<group>"; };
+		1E20AF18E12A8341CAC1604B7741560D /* XZMRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XZMRefresh-prefix.pch"; sourceTree = "<group>"; };
+		227B9D2AC15B837886416CF7B6BDC714 /* XZMBaseRefreshView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XZMBaseRefreshView.h; path = XZMRefresh/Base/XZMBaseRefreshView.h; sourceTree = "<group>"; };
+		245DF34C676E81409F35FB543C436B35 /* XZMRefreshNormalHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XZMRefreshNormalHeader.m; path = XZMRefresh/Custom/Header/XZMRefreshNormalHeader.m; sourceTree = "<group>"; };
+		26C7485E0563AF7FE9E68337AB60B0E3 /* XZMRefreshConst.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XZMRefreshConst.h; path = XZMRefresh/Other/XZMRefreshConst.h; sourceTree = "<group>"; };
+		3943CA217396FC21837FC3ADC6334963 /* Pods-ScrollLineChart-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ScrollLineChart-resources.sh"; sourceTree = "<group>"; };
+		44AA763B36F4EC5F437862B0E6DAB0EF /* UIView+XZMFrame.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+XZMFrame.m"; path = "XZMRefresh/Other/UIView+XZMFrame.m"; sourceTree = "<group>"; };
+		47050456C5F03E7D1E1961A8E01DB6D0 /* libXZMRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libXZMRefresh.a; path = libXZMRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		56F09566B9BE766C597A845797807741 /* XZMRefreshHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XZMRefreshHeader.m; path = XZMRefresh/Custom/Header/XZMRefreshHeader.m; sourceTree = "<group>"; };
+		57BF5908449F8862FD6BEC0A01BB47A9 /* UIScrollView+XZMExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+XZMExtension.m"; path = "XZMRefresh/Category/UIScrollView+XZMExtension.m"; sourceTree = "<group>"; };
+		5B007353FC565B5ADE528D6D0A7A19CF /* XZMRefresh.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XZMRefresh.xcconfig; sourceTree = "<group>"; };
+		5D134B39B8CB09B3A6E5F6CB94BBDE0C /* UIScrollView+XZMExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+XZMExtension.h"; path = "XZMRefresh/Category/UIScrollView+XZMExtension.h"; sourceTree = "<group>"; };
+		5DFCEC8DEFADD0FC0A9FFA51CF309CA3 /* Pods-ScrollLineChart-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ScrollLineChart-dummy.m"; sourceTree = "<group>"; };
+		6E101EEC1B7DCC32DD6E5599BF30A00E /* Pods-ScrollLineChart-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ScrollLineChart-frameworks.sh"; sourceTree = "<group>"; };
+		6FBF81C9218147C018028E38B47B3F35 /* libPods-ScrollLineChart.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ScrollLineChart.a"; path = "libPods-ScrollLineChart.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FDAE99063C0073779E1CF9979B132EF /* Pods-ScrollLineChart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScrollLineChart.debug.xcconfig"; sourceTree = "<group>"; };
+		76FBD10B7E17D877F9AF869A7A53F967 /* UIScrollView+XZMRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+XZMRefresh.h"; path = "XZMRefresh/Category/UIScrollView+XZMRefresh.h"; sourceTree = "<group>"; };
+		8495A75C6EE3EC0019F5F5A04527C4CA /* XZMRefreshNormalHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XZMRefreshNormalHeader.h; path = XZMRefresh/Custom/Header/XZMRefreshNormalHeader.h; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		99D066AAAB85CA04FD054F8329BD8B0C /* XZMRefresh.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = XZMRefresh.bundle; path = XZMRefresh/XZMRefresh.bundle; sourceTree = "<group>"; };
+		9B419346351ED8760FCB6B470D9DB8F5 /* XZMRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XZMRefresh.h; path = XZMRefresh/XZMRefresh.h; sourceTree = "<group>"; };
+		A19344F3CE660D097897384C58F06444 /* UIScrollView+XZMRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+XZMRefresh.m"; path = "XZMRefresh/Category/UIScrollView+XZMRefresh.m"; sourceTree = "<group>"; };
+		B97C5509344783632D5F8772AB771600 /* XZMRefreshConst.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "\U001aXZMRefreshConst.m"; path = "XZMRefresh/Other/\U001aXZMRefreshConst.m"; sourceTree = "<group>"; };
+		B9BA923D859CEC7671DC09CD0D659622 /* XZMRefreshGifHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XZMRefreshGifHeader.h; path = XZMRefresh/Custom/Header/XZMRefreshGifHeader.h; sourceTree = "<group>"; };
+		BBCA82DC11A0CD7E6FD947329231E97D /* XZMRefreshFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XZMRefreshFooter.h; path = XZMRefresh/Custom/Footer/XZMRefreshFooter.h; sourceTree = "<group>"; };
+		C306431E8ACECA31E54BEF67EC9AB3CF /* XZMRefreshGifFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XZMRefreshGifFooter.m; path = XZMRefresh/Custom/Footer/XZMRefreshGifFooter.m; sourceTree = "<group>"; };
+		C35B87B11CE0D5F717F3EAD075704EA6 /* Pods-ScrollLineChart-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ScrollLineChart-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C73156D01B62EC003BC8A1E216A4C4A3 /* XZMRefreshNormalFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XZMRefreshNormalFooter.h; path = XZMRefresh/Custom/Footer/XZMRefreshNormalFooter.h; sourceTree = "<group>"; };
+		CB1688443B007C9B9EBEAD9C4AB470E0 /* XZMBaseRefreshView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XZMBaseRefreshView.m; path = XZMRefresh/Base/XZMBaseRefreshView.m; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CC0448BA1F311E89445888F07AEC7D39 /* XZMRefreshNormalFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XZMRefreshNormalFooter.m; path = XZMRefresh/Custom/Footer/XZMRefreshNormalFooter.m; sourceTree = "<group>"; };
+		D3167DABC028823DCF8E1005BE2F85A3 /* UIView+XZMFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+XZMFrame.h"; path = "XZMRefresh/Other/UIView+XZMFrame.h"; sourceTree = "<group>"; };
+		D5BD9676249B6AA907F20F81808ADC7A /* Pods-ScrollLineChart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScrollLineChart.release.xcconfig"; sourceTree = "<group>"; };
+		E562AD4C73C9CA831B6199CBEBA5C76C /* XZMRefreshHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XZMRefreshHeader.h; path = XZMRefresh/Custom/Header/XZMRefreshHeader.h; sourceTree = "<group>"; };
+		F2FD0420A9A612BC737A1DD521526369 /* XZMRefresh-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "XZMRefresh-dummy.m"; sourceTree = "<group>"; };
+		FA2A93C20825EB2C88361F9DD3322EAC /* Pods-ScrollLineChart-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ScrollLineChart-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7FE4D86CAF4F4D85147CDA45F25F8773 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				557DB989431616F979A1A32C1F196EC9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0A1A6B5AAD913549E1A45225B67B352 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49A7800A54D4ACEB02E97B40F3D2CBEB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00C4B92DDC1A29D24066A7A8DE6354B8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				99D066AAAB85CA04FD054F8329BD8B0C /* XZMRefresh.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0F3D3538A6D146AB752D2512B6CD385F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6FBF81C9218147C018028E38B47B3F35 /* libPods-ScrollLineChart.a */,
+				47050456C5F03E7D1E1961A8E01DB6D0 /* libXZMRefresh.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5AEC6D84FC703928BF84BA7A9AD8CA23 /* XZMRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				B97C5509344783632D5F8772AB771600 /* XZMRefreshConst.m */,
+				5D134B39B8CB09B3A6E5F6CB94BBDE0C /* UIScrollView+XZMExtension.h */,
+				57BF5908449F8862FD6BEC0A01BB47A9 /* UIScrollView+XZMExtension.m */,
+				76FBD10B7E17D877F9AF869A7A53F967 /* UIScrollView+XZMRefresh.h */,
+				A19344F3CE660D097897384C58F06444 /* UIScrollView+XZMRefresh.m */,
+				D3167DABC028823DCF8E1005BE2F85A3 /* UIView+XZMFrame.h */,
+				44AA763B36F4EC5F437862B0E6DAB0EF /* UIView+XZMFrame.m */,
+				227B9D2AC15B837886416CF7B6BDC714 /* XZMBaseRefreshView.h */,
+				CB1688443B007C9B9EBEAD9C4AB470E0 /* XZMBaseRefreshView.m */,
+				9B419346351ED8760FCB6B470D9DB8F5 /* XZMRefresh.h */,
+				26C7485E0563AF7FE9E68337AB60B0E3 /* XZMRefreshConst.h */,
+				BBCA82DC11A0CD7E6FD947329231E97D /* XZMRefreshFooter.h */,
+				069AC2FF8349027E3A7D543BB3D550EF /* XZMRefreshFooter.m */,
+				106DC4A6F7C49A31C3D08A5DF442AF0A /* XZMRefreshGifFooter.h */,
+				C306431E8ACECA31E54BEF67EC9AB3CF /* XZMRefreshGifFooter.m */,
+				B9BA923D859CEC7671DC09CD0D659622 /* XZMRefreshGifHeader.h */,
+				1116A8F550C8D604C2AE83BB0BB75016 /* XZMRefreshGifHeader.m */,
+				E562AD4C73C9CA831B6199CBEBA5C76C /* XZMRefreshHeader.h */,
+				56F09566B9BE766C597A845797807741 /* XZMRefreshHeader.m */,
+				C73156D01B62EC003BC8A1E216A4C4A3 /* XZMRefreshNormalFooter.h */,
+				CC0448BA1F311E89445888F07AEC7D39 /* XZMRefreshNormalFooter.m */,
+				8495A75C6EE3EC0019F5F5A04527C4CA /* XZMRefreshNormalHeader.h */,
+				245DF34C676E81409F35FB543C436B35 /* XZMRefreshNormalHeader.m */,
+				00C4B92DDC1A29D24066A7A8DE6354B8 /* Resources */,
+				C20F31627FA095FA842B912D1C2E4BD6 /* Support Files */,
+			);
+			name = XZMRefresh;
+			path = XZMRefresh;
+			sourceTree = "<group>";
+		};
+		5DD3011EF2C594CC14CCB11CDFE77454 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5AEC6D84FC703928BF84BA7A9AD8CA23 /* XZMRefresh */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		62C1C5541EC0A7462C06170C147FD0B9 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C24A83F5DA97F8DFEE0207FF1FE8C2FC /* Pods-ScrollLineChart */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				5DD3011EF2C594CC14CCB11CDFE77454 /* Pods */,
+				0F3D3538A6D146AB752D2512B6CD385F /* Products */,
+				62C1C5541EC0A7462C06170C147FD0B9 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C20F31627FA095FA842B912D1C2E4BD6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B007353FC565B5ADE528D6D0A7A19CF /* XZMRefresh.xcconfig */,
+				F2FD0420A9A612BC737A1DD521526369 /* XZMRefresh-dummy.m */,
+				1E20AF18E12A8341CAC1604B7741560D /* XZMRefresh-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/XZMRefresh";
+			sourceTree = "<group>";
+		};
+		C24A83F5DA97F8DFEE0207FF1FE8C2FC /* Pods-ScrollLineChart */ = {
+			isa = PBXGroup;
+			children = (
+				C35B87B11CE0D5F717F3EAD075704EA6 /* Pods-ScrollLineChart-acknowledgements.markdown */,
+				FA2A93C20825EB2C88361F9DD3322EAC /* Pods-ScrollLineChart-acknowledgements.plist */,
+				5DFCEC8DEFADD0FC0A9FFA51CF309CA3 /* Pods-ScrollLineChart-dummy.m */,
+				6E101EEC1B7DCC32DD6E5599BF30A00E /* Pods-ScrollLineChart-frameworks.sh */,
+				3943CA217396FC21837FC3ADC6334963 /* Pods-ScrollLineChart-resources.sh */,
+				6FDAE99063C0073779E1CF9979B132EF /* Pods-ScrollLineChart.debug.xcconfig */,
+				D5BD9676249B6AA907F20F81808ADC7A /* Pods-ScrollLineChart.release.xcconfig */,
+			);
+			name = "Pods-ScrollLineChart";
+			path = "Target Support Files/Pods-ScrollLineChart";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E59E91E21B55CCC6083330EBE4F44E95 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B93CC5D38666FBC6EBEDDB19CE388B6 /* UIScrollView+XZMExtension.h in Headers */,
+				8223B6FD540441DA7D72CF9A2700CDEF /* UIScrollView+XZMRefresh.h in Headers */,
+				A11EC6041CBC322992D2B40886055175 /* UIView+XZMFrame.h in Headers */,
+				3A67E87CD48E727BB7BE2972B12A3653 /* XZMBaseRefreshView.h in Headers */,
+				B2474C46D4B4BD0B371133EAB4503EF4 /* XZMRefresh.h in Headers */,
+				22EBF95E51FBEC469CFA20EED7153147 /* XZMRefreshConst.h in Headers */,
+				FB77E924CFAB2EFCB678D689E7B9A186 /* XZMRefreshFooter.h in Headers */,
+				552100DA8724249EF655A357947F24FD /* XZMRefreshGifFooter.h in Headers */,
+				FF92F0C3076525689D62287BFE2B1333 /* XZMRefreshGifHeader.h in Headers */,
+				B96967DDC49AF82B071A145F76CBF002 /* XZMRefreshHeader.h in Headers */,
+				C47A4B5D761E5E9519EA2EC767B2366B /* XZMRefreshNormalFooter.h in Headers */,
+				B8572CCC208D400DFD06DA0C38FBB42A /* XZMRefreshNormalHeader.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		994C0DFE887EBC948CD74F119083D7CE /* Pods-ScrollLineChart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4249D8E256F6675F42CFC91CA1B9EDD6 /* Build configuration list for PBXNativeTarget "Pods-ScrollLineChart" */;
+			buildPhases = (
+				CA9C5C73D6DEC00A3834BBC725541ABF /* Sources */,
+				E0A1A6B5AAD913549E1A45225B67B352 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				77A3DC464CEF166F06826413CCB64142 /* PBXTargetDependency */,
+			);
+			name = "Pods-ScrollLineChart";
+			productName = "Pods-ScrollLineChart";
+			productReference = 6FBF81C9218147C018028E38B47B3F35 /* libPods-ScrollLineChart.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F0802384DD8AA7423D8D0AA781EC2477 /* XZMRefresh */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27A4D6132D4EE0CEB531CDFECC547BAE /* Build configuration list for PBXNativeTarget "XZMRefresh" */;
+			buildPhases = (
+				F282A9EF5FFF0527C0F15834B054A158 /* Sources */,
+				7FE4D86CAF4F4D85147CDA45F25F8773 /* Frameworks */,
+				E59E91E21B55CCC6083330EBE4F44E95 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XZMRefresh;
+			productName = XZMRefresh;
+			productReference = 47050456C5F03E7D1E1961A8E01DB6D0 /* libXZMRefresh.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 0F3D3538A6D146AB752D2512B6CD385F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				994C0DFE887EBC948CD74F119083D7CE /* Pods-ScrollLineChart */,
+				F0802384DD8AA7423D8D0AA781EC2477 /* XZMRefresh */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA9C5C73D6DEC00A3834BBC725541ABF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FF29E3205057012E0683A172B3985A8 /* Pods-ScrollLineChart-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F282A9EF5FFF0527C0F15834B054A158 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55F4E3B007D0264DFB55F58598842EC0 /* XZMRefreshConst.m in Sources */,
+				E2CCFFCC493929C6D494528D7F68F953 /* UIScrollView+XZMExtension.m in Sources */,
+				AD82D057AA863751426137A77EF7D8DC /* UIScrollView+XZMRefresh.m in Sources */,
+				0715AB25327F0B5DBD3EADD300E6A095 /* UIView+XZMFrame.m in Sources */,
+				D73EA2421BC17E32DC5C63DCC4682295 /* XZMBaseRefreshView.m in Sources */,
+				C9F39671D72B701210DFF8D8F2F13E98 /* XZMRefresh-dummy.m in Sources */,
+				C34C485A13D207191850DA3999FBEC33 /* XZMRefreshFooter.m in Sources */,
+				48248EA991BA9C10D0EB554693706693 /* XZMRefreshGifFooter.m in Sources */,
+				63616233D753ABF64F6ABB6D6B56C186 /* XZMRefreshGifHeader.m in Sources */,
+				16547FAFE813DE1167ECAE0F8A92768C /* XZMRefreshHeader.m in Sources */,
+				5E664290A79B7688B1C51F316BE0F9C9 /* XZMRefreshNormalFooter.m in Sources */,
+				B97F39C6228F09D1225B45C134861AF9 /* XZMRefreshNormalHeader.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		77A3DC464CEF166F06826413CCB64142 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XZMRefresh;
+			target = F0802384DD8AA7423D8D0AA781EC2477 /* XZMRefresh */;
+			targetProxy = F8078F04E57A106B5C12824ECD6BD72A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		015A368F878AC3E2CEAE21DDE8026304 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		0892B28D48F214F8D7A914C8F7106BAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B007353FC565B5ADE528D6D0A7A19CF /* XZMRefresh.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/XZMRefresh/XZMRefresh-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		44CDBB6D11DE06DB64D6268622BDC47E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		76B39E28166D19382DE3F7295DBE7138 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5BD9676249B6AA907F20F81808ADC7A /* Pods-ScrollLineChart.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		8C8516DBCD090AD9D8A1CF10011C702F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FDAE99063C0073779E1CF9979B132EF /* Pods-ScrollLineChart.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CE6D6F275A4EC777EE982486BA88E6E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B007353FC565B5ADE528D6D0A7A19CF /* XZMRefresh.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/XZMRefresh/XZMRefresh-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27A4D6132D4EE0CEB531CDFECC547BAE /* Build configuration list for PBXNativeTarget "XZMRefresh" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0892B28D48F214F8D7A914C8F7106BAD /* Debug */,
+				CE6D6F275A4EC777EE982486BA88E6E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				015A368F878AC3E2CEAE21DDE8026304 /* Debug */,
+				44CDBB6D11DE06DB64D6268622BDC47E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4249D8E256F6675F42CFC91CA1B9EDD6 /* Build configuration list for PBXNativeTarget "Pods-ScrollLineChart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C8516DBCD090AD9D8A1CF10011C702F /* Debug */,
+				76B39E28166D19382DE3F7295DBE7138 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
