@@ -21,7 +21,6 @@
 
 @property (assign, nonatomic) CGFloat defaultSpace;
 
-@property (assign, nonatomic) CGRect firstFrame;//记录坐标轴的第一个frame
 @property (assign, nonatomic) CGRect firstStrFrame;//第一个点的文字的frame
 @property (assign, nonatomic) BOOL isFirst;
 @property (nonatomic, assign) CGFloat marginLeft;
@@ -60,12 +59,6 @@
         CGSize labelSize = [title sizeWithAttributes:attr];
         CGRect titleRect = CGRectMake(i* self.pointGap - labelSize.width/2 + self.marginLeft, rect.size.height - labelSize.height, labelSize.width, labelSize.height);
         
-        if ( i==0 ) {
-            self.firstFrame = titleRect;
-        }
-//        if (titleRect.origin.x < 0) {
-//            titleRect.origin.x = 0;
-//        }
         [title drawInRect:titleRect withAttributes:@{NSFontAttributeName :[UIFont systemFontOfSize:8],NSForegroundColorAttributeName: [UIColor whiteColor]}];
         
     }
@@ -83,10 +76,12 @@
     
     /////////////////////// 根据数据源画折线 /////////////////////////
     CGFloat chartHeight = rect.size.height - xAxisTextGap - textSize.height - marginTop;
+    UIBezierPath *path = [[UIBezierPath alloc] init];
     if (self.yValueArray && self.yValueArray.count>0) {
         for (int i=0; i<self.yValueArray.count; i++) {
             //如果非最后一个点
             if (i != self.yValueArray.count - 1) {
+                
                 NSNumber *startValue = self.yValueArray[i];
                 NSNumber *endValue = self.yValueArray[i+1];
                 
@@ -96,7 +91,10 @@
                 CGFloat normal[1]={1};
                 CGContextSetLineDash(context,0,normal,0); //画实线
                 
-                [self drawLine:context startPoint:startPoint endPoint:endPoint lineColor:[UIColor colorWithRed:26/255.0 green:135/255.0 blue:254/255.0 alpha:1] lineWidth:2];
+                [path moveToPoint:startPoint];
+                [path addLineToPoint:endPoint];
+                
+//                [self drawLine:context startPoint:startPoint endPoint:endPoint lineColor:[UIColor colorWithRed:26/255.0 green:135/255.0 blue:254/255.0 alpha:1] lineWidth:2];
                 
                 //画点
                 UIColor*aColor = [UIColor redColor]; //点的颜色
@@ -116,7 +114,7 @@
             }
         }
     }
-
+    [path fillWithBlendMode:kCGBlendModeMultiply alpha:0.5];
 }
 
 - (void)drawLine:(CGContextRef)context startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint lineColor:(UIColor *)lineColor lineWidth:(CGFloat)width {

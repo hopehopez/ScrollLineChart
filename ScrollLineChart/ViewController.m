@@ -70,12 +70,12 @@
     }
     
     NSInteger index = indexPath.row;
-    
-    if (index % 2 == 0) {
-        cell.backgroundColor = [UIColor orangeColor];
-    } else {
-        cell.backgroundColor = [UIColor purpleColor];
-    }
+    cell.backgroundColor = [UIColor whiteColor];
+//    if (index % 2 == 0) {
+//        cell.backgroundColor = [UIColor orangeColor];
+//    } else {
+//        cell.backgroundColor = [UIColor purpleColor];
+//    }
     
     NSArray *data = self.dataSource[index];
     NSMutableArray *muArr = [NSMutableArray arrayWithArray:data];
