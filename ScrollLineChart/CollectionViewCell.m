@@ -53,13 +53,12 @@
     for (int i=0; i<self.xTitleArray.count; i++) {
         NSString *title = self.xTitleArray[i];
         
-        //        [[UIColor blackColor] set];
         CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
         NSDictionary *attr = @{NSFontAttributeName: [UIFont systemFontOfSize:8]};
         CGSize labelSize = [title sizeWithAttributes:attr];
         CGRect titleRect = CGRectMake(i* self.pointGap - labelSize.width/2 + self.marginLeft, rect.size.height - labelSize.height, labelSize.width, labelSize.height);
         
-        [title drawInRect:titleRect withAttributes:@{NSFontAttributeName :[UIFont systemFontOfSize:8],NSForegroundColorAttributeName: [UIColor whiteColor]}];
+        [title drawInRect:titleRect withAttributes:@{NSFontAttributeName :[UIFont systemFontOfSize:8],NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
         
     }
     
@@ -76,7 +75,9 @@
     
     /////////////////////// 根据数据源画折线 /////////////////////////
     CGFloat chartHeight = rect.size.height - xAxisTextGap - textSize.height - marginTop;
+
     UIBezierPath *path = [[UIBezierPath alloc] init];
+    NSMutableArray *pointsArray = [NSMutableArray array];
     if (self.yValueArray && self.yValueArray.count>0) {
         for (int i=0; i<self.yValueArray.count; i++) {
             //如果非最后一个点
@@ -91,30 +92,73 @@
                 CGFloat normal[1]={1};
                 CGContextSetLineDash(context,0,normal,0); //画实线
                 
-                [path moveToPoint:startPoint];
+                if (i==0) {
+                    [path moveToPoint:CGPointMake(self.marginLeft, chartHeight + marginTop - 1)];
+                    [path addLineToPoint:startPoint];
+                }
+                
                 [path addLineToPoint:endPoint];
                 
-//                [self drawLine:context startPoint:startPoint endPoint:endPoint lineColor:[UIColor colorWithRed:26/255.0 green:135/255.0 blue:254/255.0 alpha:1] lineWidth:2];
+                [self drawLine:context startPoint:startPoint endPoint:endPoint lineColor:[UIColor colorWithRed:26/255.0 green:135/255.0 blue:254/255.0 alpha:1] lineWidth:2];
                 
-                //画点
-                UIColor*aColor = [UIColor redColor]; //点的颜色
-                CGContextSetFillColorWithColor(context, aColor.CGColor);//填充颜色
-                CGContextAddArc(context, startPoint.x, startPoint.y, 3, 0, 2*M_PI, 0); //添加一个圆
-                CGContextDrawPath(context, kCGPathFill);//绘制填充
+                [pointsArray addObject:[NSValue valueWithCGPoint:startPoint]];
                 
             } else {
                 NSNumber *endValue = self.yValueArray[i];
                 
                 CGPoint endPoint = CGPointMake(self.pointGap * i + self.marginLeft, chartHeight * (endValue.doubleValue - self.yMin) / (self.yMax - self.yMin) + marginTop);
-                //画点
-                UIColor*aColor = [UIColor redColor]; //点的颜色
-                CGContextSetFillColorWithColor(context, aColor.CGColor);//填充颜色
-                CGContextAddArc(context, endPoint.x, endPoint.y, 3, 0, 2*M_PI, 0); //添加一个圆
-                CGContextDrawPath(context, kCGPathFill);//绘制填充
+                
+                [path addLineToPoint:CGPointMake(self.pointGap * i + self.marginLeft, chartHeight + marginTop - 1)];
+                
+                [pointsArray addObject:[NSValue valueWithCGPoint:endPoint]];
             }
         }
     }
-    [path fillWithBlendMode:kCGBlendModeMultiply alpha:0.5];
+    
+    [path closePath];    
+    
+    CAGradientLayer *gradientLayer = nil;
+    for (CALayer *layer in self.layer.sublayers) {
+        if ([layer isKindOfClass:[CAGradientLayer class]]) {
+            gradientLayer = (CAGradientLayer *)layer;
+        }
+    }
+    if (gradientLayer == nil) {
+        gradientLayer = [[CAGradientLayer alloc] init];
+        gradientLayer.colors = @[(__bridge id) [UIColor yellowColor].CGColor, (__bridge id)[UIColor whiteColor].CGColor];
+        gradientLayer.startPoint = CGPointMake(0, 0);
+        gradientLayer.endPoint = CGPointMake(0, 1);
+        [self.layer addSublayer:gradientLayer];
+    }
+    gradientLayer.frame = self.bounds;
+    
+    CAShapeLayer *shapeLayer = [[CAShapeLayer alloc] init];
+    shapeLayer.frame = self.bounds;
+    shapeLayer.path = path.CGPath;
+    gradientLayer.mask = shapeLayer;
+    
+    NSArray *subViews = self.subviews;
+    for (UIView *subView in subViews) {
+        if (subView.tag == 1000) {
+            [subView removeFromSuperview];
+        }
+    }
+    
+    for (NSValue *pointValue in pointsArray) {
+        CGPoint point = [pointValue CGPointValue];
+        //画点
+//        UIColor*aColor = [UIColor redColor]; //点的颜色
+//        CGContextSetFillColorWithColor(context, aColor.CGColor);//填充颜色
+//        CGContextAddArc(context, point.x, point.y, 3, 0, 2*M_PI, 0); //添加一个圆
+//        CGContextDrawPath(context, kCGPathFill);//绘制填充
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 6, 6)];
+        view.backgroundColor = [UIColor redColor];
+        view.layer.masksToBounds = YES;
+        view.layer.cornerRadius = 3;
+        view.tag = 1000;
+        view.center = point;
+        [self addSubview:view];
+    }
 }
 
 - (void)drawLine:(CGContextRef)context startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint lineColor:(UIColor *)lineColor lineWidth:(CGFloat)width {
